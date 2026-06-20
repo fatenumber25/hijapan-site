@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ja" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ドライブレコーダー ライセンス / DriverRecorder Licenses</title>
+<meta name="description" content="ドライブレコーダーアプリが利用するオープンソース・第三者ソフトウェアのライセンス表記。">
+<link rel="stylesheet" href="/style.css">
+<script>document.documentElement.classList.remove('no-js');</script>
+</head>
+<body data-lang="ja">
+
+<header class="bar">
+  <a class="brand" href="/">ドライブレコーダー <span class="tag">Dashcam</span></a>
+  <div class="lang-toggle" role="group" aria-label="Language / 言語">
+    <button type="button" data-lang="ja" class="is-active">日本語</button>
+    <button type="button" data-lang="en">EN</button>
+  </div>
+</header>
+
+<main>
+  <!-- ===================== 日本語 ===================== -->
+  <section class="ja">
+    <p class="eyebrow">Licenses</p>
+    <h1>ライセンス表記</h1>
+    <p class="lead">本アプリは、以下のオープンソースおよび第三者ソフトウェアを利用しています。各著作権者に感謝します。</p>
+
+    <h2 class="plain">オープンソース</h2>
+
+    <div class="card">
+      <span class="label">LGPL-2.1-or-later</span>
+      <p style="margin:0"><strong>FFmpeg</strong>（FFmpegKit 経由で利用）<br>
+      Copyright © FFmpeg contributors.<br>
+      本アプリは FFmpeg を動的に利用しています。LGPL の定めにより、ライブラリのソースコードおよび再リンクに必要な情報は、下記のお問い合わせ先にご請求いただけます。<br>
+      <a href="https://www.ffmpeg.org/legal.html">ffmpeg.org/legal</a> ・ <a href="https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html">LGPL-2.1 全文</a></p>
+    </div>
+
+    <h2 class="plain">第三者サービス（SDK）</h2>
+
+    <div class="card">
+      <span class="label">Proprietary — Google</span>
+      <p style="margin:0"><strong>Google Mobile Ads SDK（AdMob）</strong><br>
+      Copyright © Google LLC. Google の利用規約・ポリシーに従います。<br>
+      <a href="https://developers.google.com/admob/ios/license">利用規約</a> ・ <a href="https://policies.google.com/privacy">プライバシーポリシー</a></p>
+    </div>
+
+    <!-- 追加ライブラリはこのカードを複製して記入してください
+    <div class="card">
+      <span class="label">MIT</span>
+      <p style="margin:0"><strong>ライブラリ名</strong><br>Copyright © 著作権者<br><a href="URL">ライセンス全文</a></p>
+    </div>
+    -->
+
+    <h2 class="plain">Apple フレームワーク</h2>
+    <p>AVFoundation・CoreLocation・CoreMotion・StoreKit・MapKit など Apple 提供のフレームワークは、Apple のソフトウェア使用許諾契約に基づいて利用しており、個別の表記は不要です。</p>
+
+    <div class="card">
+      <span class="label">Contact</span>
+      <p style="margin:0">ライセンスに関するお問い合わせ：<a href="mailto:support@hijapan.net">support@hijapan.net</a></p>
+    </div>
+  </section>
+
+  <hr class="lane" aria-hidden="true">
+
+  <!-- ===================== English ===================== -->
+  <section class="en">
+    <p class="eyebrow">Licenses</p>
+    <h1>Open-Source Licenses</h1>
+    <p class="lead">This app uses the following open-source and third-party software. We thank the respective copyright holders.</p>
+
+    <h2 class="plain">Open Source</h2>
+
+    <div class="card">
+      <span class="label">LGPL-2.1-or-later</span>
+      <p style="margin:0"><strong>FFmpeg</strong> (used via FFmpegKit)<br>
+      Copyright © FFmpeg contributors.<br>
+      This app links to FFmpeg dynamically. As required by the LGPL, the library’s source code and the information needed to relink are available on request at the contact below.<br>
+      <a href="https://www.ffmpeg.org/legal.html">ffmpeg.org/legal</a> ・ <a href="https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html">LGPL-2.1 full text</a></p>
+    </div>
+
+    <h2 class="plain">Third-Party Services (SDKs)</h2>
+
+    <div class="card">
+      <span class="label">Proprietary — Google</span>
+      <p style="margin:0"><strong>Google Mobile Ads SDK (AdMob)</strong><br>
+      Copyright © Google LLC. Subject to Google’s terms and policies.<br>
+      <a href="https://developers.google.com/admob/ios/license">Terms</a> ・ <a href="https://policies.google.com/privacy">Privacy Policy</a></p>
+    </div>
+
+    <h2 class="plain">Apple Frameworks</h2>
+    <p>Apple-provided frameworks such as AVFoundation, CoreLocation, CoreMotion, StoreKit, and MapKit are used under Apple’s software license agreement and require no separate attribution.</p>
+
+    <div class="card">
+      <span class="label">Contact</span>
+      <p style="margin:0">License inquiries: <a href="mailto:support@hijapan.net">support@hijapan.net</a></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span>ドライブレコーダー / DriverRecorder</span>
+  <a href="/">Support</a>
+  <a href="/privacy">Privacy</a>
+  <a href="/licenses">Licenses</a>
+</footer>
+
+<script>
+(function () {
+  var KEY = 'dr-lang';
+  var body = document.body;
+  var btns = document.querySelectorAll('.lang-toggle button');
+  function set(lang) {
+    body.setAttribute('data-lang', lang);
+    document.documentElement.setAttribute('lang', lang);
+    btns.forEach(function (b) { b.classList.toggle('is-active', b.dataset.lang === lang); });
+    try { localStorage.setItem(KEY, lang); } catch (e) {}
+  }
+  var saved; try { saved = localStorage.getItem(KEY); } catch (e) {}
+  if (!saved) saved = (navigator.language || 'ja').toLowerCase().indexOf('ja') === 0 ? 'ja' : 'en';
+  set(saved);
+  btns.forEach(function (b) { b.addEventListener('click', function () { set(b.dataset.lang); }); });
+})();
+</script>
+</body>
+</html>
