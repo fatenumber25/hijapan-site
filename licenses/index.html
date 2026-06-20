@@ -31,8 +31,9 @@
       <span class="label">LGPL-2.1-or-later</span>
       <p style="margin:0"><strong>FFmpeg</strong>（FFmpegKit 経由で利用）<br>
       Copyright © FFmpeg contributors.<br>
+      <strong>使用目的：</strong>市販ドライブレコーダー（CellStar 等）の録画ファイル（AVI／ADPCM 音声）をアプリ内で読み込み・変換・再生するために使用しています。<br>
       本アプリは FFmpeg を動的に利用しています。LGPL の定めにより、ライブラリのソースコードおよび再リンクに必要な情報は、下記のお問い合わせ先にご請求いただけます。<br>
-      <a href="https://www.ffmpeg.org/legal.html" target="_blank">ffmpeg.org/legal</a> ・ <a href="https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html" target="_blank">LGPL-2.1 全文</a></p>
+      <a href="https://www.ffmpeg.org/legal.html">ffmpeg.org/legal</a> ・ <a href="https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html">LGPL-2.1 全文</a></p>
     </div>
 
     <h2 class="plain">第三者サービス（SDK）</h2>
@@ -41,7 +42,8 @@
       <span class="label">Proprietary — Google</span>
       <p style="margin:0"><strong>Google Mobile Ads SDK（AdMob）</strong><br>
       Copyright © Google LLC. Google の利用規約・ポリシーに従います。<br>
-      <a href="https://developers.google.com/admob/ios/terms" target="_blank">利用規約</a> ・ <a href="https://policies.google.com/privacy" target="_blank">プライバシーポリシー</a></p>
+      <strong>使用目的：</strong>本アプリを無料で提供するため、広告の表示（収益化）に使用しています。<br>
+      <a href="https://developers.google.com/admob/ios/terms">利用規約</a> ・ <a href="https://policies.google.com/privacy">プライバシーポリシー</a></p>
     </div>
 
     <!-- 追加ライブラリはこのカードを複製して記入してください
@@ -74,8 +76,9 @@
       <span class="label">LGPL-2.1-or-later</span>
       <p style="margin:0"><strong>FFmpeg</strong> (used via FFmpegKit)<br>
       Copyright © FFmpeg contributors.<br>
+      <strong>Purpose:</strong> used to read, convert, and play recordings (AVI / ADPCM audio) from commercial dashcams such as CellStar within the app.<br>
       This app links to FFmpeg dynamically. As required by the LGPL, the library’s source code and the information needed to relink are available on request at the contact below.<br>
-      <a href="https://www.ffmpeg.org/legal.html" target="_blank">ffmpeg.org/legal</a> ・ <a href="https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html" target="_blank">LGPL-2.1 full text</a></p>
+      <a href="https://www.ffmpeg.org/legal.html">ffmpeg.org/legal</a> ・ <a href="https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html">LGPL-2.1 full text</a></p>
     </div>
 
     <h2 class="plain">Third-Party Services (SDKs)</h2>
@@ -84,7 +87,8 @@
       <span class="label">Proprietary — Google</span>
       <p style="margin:0"><strong>Google Mobile Ads SDK (AdMob)</strong><br>
       Copyright © Google LLC. Subject to Google’s terms and policies.<br>
-      <a href="https://developers.google.com/admob/ios/terms" target="_blank">Terms</a> ・ <a href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a></p>
+      <strong>Purpose:</strong> used to display ads (monetization) so the app can be offered for free.<br>
+      <a href="https://developers.google.com/admob/ios/terms">Terms</a> ・ <a href="https://policies.google.com/privacy">Privacy Policy</a></p>
     </div>
 
     <h2 class="plain">Apple Frameworks</h2>
@@ -119,6 +123,12 @@
   if (!saved) saved = (navigator.language || 'ja').toLowerCase().indexOf('ja') === 0 ? 'ja' : 'en';
   set(saved);
   btns.forEach(function (b) { b.addEventListener('click', function () { set(b.dataset.lang); }); });
+
+  // Open external links in a new tab (internal links stay in the same tab)
+  document.querySelectorAll('a[href^="http"]').forEach(function (a) {
+    a.target = '_blank';
+    a.rel = 'noopener noreferrer';
+  });
 })();
 </script>
 </body>
