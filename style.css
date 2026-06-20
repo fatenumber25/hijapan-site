@@ -1,0 +1,179 @@
+/* ===========================================================
+   DriverRecorder — shared site styles
+   Identity: dark cockpit instrument panel.
+   - near-black panels, app-blue accent, amber road-lane signature
+   - monospace for instrument-readout meta/labels/section numbers
+   =========================================================== */
+
+:root {
+  color-scheme: dark;
+
+  --bg:        #0b0d10;
+  --panel:     #14171c;
+  --panel-2:   #1a1e25;
+  --line:      #272d36;
+  --ink:       #e9ecf0;
+  --ink-2:     #aab2bd;
+  --ink-3:     #6b7480;
+  --accent:    #3d9bff;
+  --accent-dim:#1f3a5c;
+  --lane:      #f5c451;   /* road lane marking */
+  --danger:    #ff6b5e;
+
+  --sans: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN",
+          "Hiragino Sans", "Segoe UI", system-ui, sans-serif;
+  --mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+
+  --maxw: 720px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation: none !important; transition: none !important; }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  line-height: 1.72;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* thin instrument accent at the very top */
+body::before {
+  content: "";
+  position: fixed; inset: 0 0 auto 0; height: 2px; z-index: 60;
+  background: linear-gradient(90deg, var(--accent) 0%, var(--lane) 60%, transparent 100%);
+  opacity: .9;
+}
+
+/* ---------- top bar ---------- */
+.bar {
+  position: sticky; top: 0; z-index: 50;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1rem;
+  padding: .85rem clamp(16px, 4vw, 28px);
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  backdrop-filter: saturate(140%) blur(10px);
+  -webkit-backdrop-filter: saturate(140%) blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.brand {
+  display: flex; align-items: baseline; gap: .55rem;
+  font-weight: 700; letter-spacing: .01em; color: var(--ink);
+  text-decoration: none; font-size: 1rem;
+}
+.brand .tag {
+  font-family: var(--mono); font-size: .62rem; letter-spacing: .22em;
+  text-transform: uppercase; color: var(--ink-3);
+}
+
+/* language toggle = instrument switch */
+.lang-toggle {
+  display: inline-flex; padding: 3px; gap: 2px;
+  border: 1px solid var(--line); border-radius: 999px; background: var(--panel);
+}
+.lang-toggle button {
+  font: 600 .8rem/1 var(--sans);
+  color: var(--ink-2); background: transparent; border: 0; cursor: pointer;
+  padding: .42rem .8rem; border-radius: 999px;
+  transition: background .15s ease, color .15s ease;
+}
+.lang-toggle button:hover { color: var(--ink); }
+.lang-toggle button.is-active { color: #061018; background: var(--accent); }
+.lang-toggle button:focus-visible { outline: 2px solid var(--lane); outline-offset: 2px; }
+
+/* ---------- layout ---------- */
+main { max-width: var(--maxw); margin: 0 auto; padding: clamp(28px,6vw,56px) clamp(16px,4vw,28px) 96px; }
+
+.eyebrow {
+  font-family: var(--mono); font-size: .72rem; letter-spacing: .28em;
+  text-transform: uppercase; color: var(--accent); margin: 0 0 .6rem;
+}
+h1 {
+  font-size: clamp(1.7rem, 5vw, 2.3rem); line-height: 1.12;
+  letter-spacing: -.01em; margin: 0 0 .5rem; font-weight: 800;
+}
+.meta {
+  font-family: var(--mono); font-size: .8rem; color: var(--ink-3);
+  margin: 0 0 1.6rem; letter-spacing: .02em;
+}
+.lead { color: var(--ink-2); font-size: 1.02rem; margin: 0 0 2.4rem; }
+
+h2 {
+  display: flex; align-items: baseline; gap: .65rem;
+  font-size: 1.18rem; font-weight: 700; letter-spacing: -.005em;
+  margin: 2.4rem 0 .6rem; padding-top: 1.4rem; border-top: 1px solid var(--line);
+}
+h2 .num {
+  font-family: var(--mono); font-size: .82rem; color: var(--accent);
+  font-weight: 600; letter-spacing: .04em; flex: 0 0 auto;
+}
+h2.plain { border-top: 0; padding-top: 0; }
+
+p  { margin: .55rem 0 1rem; color: var(--ink); }
+ul { padding-left: 1.15rem; margin: .55rem 0 1.1rem; }
+li { margin: .3rem 0; color: var(--ink); }
+li strong { color: var(--ink); }
+a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-dim); }
+a:hover { border-bottom-color: var(--accent); }
+a:focus-visible { outline: 2px solid var(--lane); outline-offset: 2px; border-radius: 2px; }
+
+/* contact / callout card */
+.card {
+  background: var(--panel); border: 1px solid var(--line); border-radius: 14px;
+  padding: 1.1rem 1.25rem; margin: 1.2rem 0;
+}
+.card .label {
+  font-family: var(--mono); font-size: .68rem; letter-spacing: .2em;
+  text-transform: uppercase; color: var(--ink-3); display: block; margin-bottom: .35rem;
+}
+.card.warn { border-color: color-mix(in srgb, var(--lane) 45%, var(--line)); }
+
+/* FAQ */
+.faq { display: grid; gap: .55rem; margin: .4rem 0 1.4rem; }
+.faq details {
+  background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+  padding: .15rem .25rem; overflow: clip;
+}
+.faq summary {
+  cursor: pointer; list-style: none; padding: .9rem 1rem; font-weight: 650;
+  display: flex; align-items: center; gap: .7rem; color: var(--ink);
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::before {
+  content: "+"; font-family: var(--mono); color: var(--accent);
+  font-size: 1.1rem; line-height: 1; transition: transform .18s ease; flex: 0 0 auto;
+}
+.faq details[open] summary::before { content: "\2212"; } /* minus */
+.faq .body { padding: 0 1rem 1rem 2.4rem; color: var(--ink-2); }
+
+/* road-lane divider (signature) */
+.lane {
+  height: 6px; border: 0; border-radius: 3px; margin: 3.4rem 0;
+  background: repeating-linear-gradient(90deg,
+    var(--lane) 0 30px, transparent 30px 60px);
+  opacity: .5;
+}
+
+/* footer */
+footer {
+  max-width: var(--maxw); margin: 0 auto; padding: 1.6rem clamp(16px,4vw,28px) 3rem;
+  border-top: 1px solid var(--line);
+  display: flex; flex-wrap: wrap; gap: .4rem 1.4rem; align-items: center;
+  font-size: .85rem; color: var(--ink-3); font-family: var(--mono); letter-spacing: .02em;
+}
+footer a { border-bottom: 0; color: var(--ink-2); }
+footer a:hover { color: var(--accent); }
+
+/* fallback: no JS -> show both languages */
+.en { display: none; }
+body[data-lang="en"] .ja { display: none; }
+body[data-lang="en"] .en { display: revert; }
+.no-js .en { display: revert; }

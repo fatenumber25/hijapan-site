@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ja" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ドライブレコーダー サポート / DriverRecorder Support</title>
+<meta name="description" content="ドライブレコーダーアプリのサポート・よくある質問・お問い合わせ。">
+<link rel="stylesheet" href="./style.css">
+<script>document.documentElement.classList.remove('no-js');</script>
+</head>
+<body data-lang="ja">
+
+<header class="bar">
+  <a class="brand" href="./index.html">ドライブレコーダー <span class="tag">Dashcam</span></a>
+  <div class="lang-toggle" role="group" aria-label="Language / 言語">
+    <button type="button" data-lang="ja" class="is-active">日本語</button>
+    <button type="button" data-lang="en">EN</button>
+  </div>
+</header>
+
+<main>
+  <!-- ===================== 日本語 ===================== -->
+  <section class="ja">
+    <p class="eyebrow">Support</p>
+    <h1>サポート</h1>
+    <p class="lead">よくある質問と、お問い合わせ先です。解決しない場合はお気軽にご連絡ください。</p>
+
+    <div class="faq">
+      <details open>
+        <summary>録画はどう始めますか？</summary>
+        <div class="body">中央下の赤いボタンで開始・停止します。設定で「自動で録画を開始・停止する」をオンにすると、アプリを開くと自動で始まり、停車で停止・発進で再開します。</div>
+      </details>
+      <details>
+        <summary>録画した映像はどこにありますか？</summary>
+        <div class="body">左上のメニューから「運転履歴」を開くと一覧が表示されます。タップで再生・地図・共有ができます。</div>
+      </details>
+      <details>
+        <summary>容量がいっぱいになりませんか？</summary>
+        <div class="body">設定の「ループ録画」をオンにすると、上限（容量または時間）を超えた古い映像を自動で削除して録画を続けます。衝突・急ブレーキ前後の映像は「イベントの保護」で残せます。</div>
+      </details>
+      <details>
+        <summary>録画画面（軽量／コックピット）はどこで変えますか？</summary>
+        <div class="body">設定の「表示 ＞ 録画画面」で切り替えられます。古い端末では軽量UIが軽快です。</div>
+      </details>
+      <details>
+        <summary>広告を消せますか？</summary>
+        <div class="body">「広告を削除」を購入すると広告が表示されなくなります。機種変更時は「購入を復元」で引き継げます。</div>
+      </details>
+      <details>
+        <summary>どんな権限が必要ですか？</summary>
+        <div class="body">カメラ・マイク（録画）と位置情報（速度・距離・地図）が必要です。許可は iOS の「設定」アプリからいつでも変更できます。</div>
+      </details>
+    </div>
+
+    <h2 class="plain">お問い合わせ</h2>
+    <div class="card">
+      <span class="label">Contact</span>
+      <p style="margin:0">解決しない場合は <a href="mailto:support@hijapan.net">support@hijapan.net</a> までご連絡ください。<br>端末の機種と iOS のバージョンを添えていただくとスムーズです。</p>
+    </div>
+    <p>プライバシーポリシー：<a href="./privacy.html">こちら</a></p>
+  </section>
+
+  <!-- ===================== English ===================== -->
+  <section class="en">
+    <p class="eyebrow">Support</p>
+    <h1>Support</h1>
+    <p class="lead">Frequently asked questions and how to reach us. If this doesn’t solve your issue, get in touch.</p>
+
+    <div class="faq">
+      <details open>
+        <summary>How do I start recording?</summary>
+        <div class="body">Use the red button at the bottom center to start and stop. If you turn on “Start/stop recording automatically” in Settings, recording starts when you open the app, stops when parked, and resumes when you move.</div>
+      </details>
+      <details>
+        <summary>Where are my recordings?</summary>
+        <div class="body">Open “History” from the top-left menu. Tap a drive to play it, view the map, or share.</div>
+      </details>
+      <details>
+        <summary>Will storage fill up?</summary>
+        <div class="body">Turn on “Loop recording” in Settings to automatically delete the oldest footage once a limit (size or time) is reached, while recording continues. Footage around collisions and hard braking can be kept with “Event protection.”</div>
+      </details>
+      <details>
+        <summary>Where do I switch the recording screen (Light / Cockpit)?</summary>
+        <div class="body">In Settings under “Display ＞ Recording screen.” The Light UI runs smoother on older devices.</div>
+      </details>
+      <details>
+        <summary>Can I remove ads?</summary>
+        <div class="body">Purchase “Remove ads” to hide ads. On a new device, use “Restore purchases” to carry it over.</div>
+      </details>
+      <details>
+        <summary>What permissions are needed?</summary>
+        <div class="body">Camera and microphone (recording) and location (speed, distance, map). You can change permissions anytime in the iOS Settings app.</div>
+      </details>
+    </div>
+
+    <h2 class="plain">Contact us</h2>
+    <div class="card">
+      <span class="label">Contact</span>
+      <p style="margin:0">If this doesn’t solve your issue, email <a href="mailto:support@hijapan.net">support@hijapan.net</a>.<br>Including your device model and iOS version helps us respond faster.</p>
+    </div>
+    <p>Privacy Policy: <a href="./privacy.html">here</a></p>
+  </section>
+</main>
+
+<footer>
+  <span>ドライブレコーダー / DriverRecorder</span>
+  <a href="./index.html">Support</a>
+  <a href="./privacy.html">Privacy</a>
+</footer>
+
+<script>
+(function () {
+  var KEY = 'dr-lang';
+  var body = document.body;
+  var btns = document.querySelectorAll('.lang-toggle button');
+  function set(lang) {
+    body.setAttribute('data-lang', lang);
+    document.documentElement.setAttribute('lang', lang);
+    btns.forEach(function (b) { b.classList.toggle('is-active', b.dataset.lang === lang); });
+    try { localStorage.setItem(KEY, lang); } catch (e) {}
+  }
+  var saved; try { saved = localStorage.getItem(KEY); } catch (e) {}
+  if (!saved) saved = (navigator.language || 'ja').toLowerCase().indexOf('ja') === 0 ? 'ja' : 'en';
+  set(saved);
+  btns.forEach(function (b) { b.addEventListener('click', function () { set(b.dataset.lang); }); });
+})();
+</script>
+</body>
+</html>
