@@ -1,5 +1,5 @@
 /* ===========================================================
-   DriverRecorder — shared site styles
+   DriverRecorder 窶� shared site styles
    Identity: dark cockpit instrument panel.
    - near-black panels, app-blue accent, amber road-lane signature
    - monospace for instrument-readout meta/labels/section numbers
@@ -59,6 +59,7 @@ body::before {
   display: flex; align-items: center; justify-content: space-between;
   gap: 1rem;
   padding: .85rem clamp(16px, 4vw, 28px);
+  background: rgba(11, 13, 16, .82); /* fallback for browsers without color-mix */
   background: color-mix(in srgb, var(--bg) 82%, transparent);
   backdrop-filter: saturate(140%) blur(10px);
   -webkit-backdrop-filter: saturate(140%) blur(10px);
@@ -124,6 +125,16 @@ li strong { color: var(--ink); }
 a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-dim); }
 a:hover { border-bottom-color: var(--accent); }
 a:focus-visible { outline: 2px solid var(--lane); outline-offset: 2px; border-radius: 2px; }
+
+/* inline code (instrument readout) */
+code {
+  font-family: var(--mono);
+  font-size: .86em;
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  padding: .1em .4em;
+}
 
 /* contact / callout card */
 .card {
